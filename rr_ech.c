@@ -5,6 +5,8 @@
 // First line of text file contains matrix size e.g. for 2x2 matrix, write 2 2
 // next lines contain matrix data e.g. write  1 2
 //					      3 4 
+// Author: Nathan Rising
+// Last revision: 01/30/2021
 // Gaussian elimination is a very simple method to row reduce matrices
 // This program was created for educational purposes and outputs the major steps
 // after each iteration.
@@ -20,10 +22,10 @@
 
 int main(int argc,char* argv[])
 {
-    std::vector<float> matrix;
-    float zero_tol = 0.0001;
-    int n_rows;
-    int n_cols;
+    std::vector<float> matrix; // matrix data is stored in vector
+    float zero_tol = 0.0001;   // any number |num| < tol defined as zero
+    int n_rows;		       // number of matrix rows
+    int n_cols;		       // number of matrix columns
 
     if(argc > 1)
     {
