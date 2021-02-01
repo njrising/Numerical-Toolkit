@@ -20,7 +20,7 @@
 #include <cmath>
 #include <iomanip>
 
-int main(int argc,char* argv[])
+int main(int argc, char* argv[])
 {
     std::vector<float> matrix; // matrix data is stored in vector
     float zero_tol = 0.0001;   // any number |num| < tol defined as zero
@@ -61,9 +61,11 @@ int main(int argc,char* argv[])
             // close file since no longer needed
             in_file.close();
         }
-        else{
+        else
+        {
             // print error message if unable to open file
             std::cout<<"could not open file"<<'\n';
+            return -1;
         }
 
         // print contents of file
@@ -74,6 +76,11 @@ int main(int argc,char* argv[])
             }
             std::cout<<'\n';
         }
+    }
+    else
+    {
+        std::cout<<"Insufficient input arguments\n";
+        return -1;
     }
 
     // put into reduced row echelon form
