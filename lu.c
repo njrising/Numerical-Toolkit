@@ -66,6 +66,64 @@ if(argc > 1)
             }
                 std::cout<<'\n';
         }
+    float zero_tol = 0.0001;
+    float P[n_rows][n_rows];
+    float L[][];
+    float U[][];
+    
+    // iterate through columns
+    for(int i = 0;i <= n_rows;++i ){
+        // Make sure pivot is nonzero
+        if(abs(in_matrix[i][i]) < zero_tol){
+            for(int j = i+1; j <n_rows;++j){
+                if(abs(in_matrix[j][i]) > zero_tol){
+                    // swap rows
+                    for(int k = 0;k < n_cols;++k){
+                        float num_swap = in_matrix[j][k];
+                        in_matrix[j][k] = in_matrix[i][k];
+                        in_matrix[i][k] = num_swap; 
+                    }
+                    // permutation matrix
+                    float PN[n_rows][n_rows] = {};
+                    for(int l = 0;l<n_rows;++l){
+                        if(l==i){PN[l][j] = 1;}
+                        else if(l==j){PN[l][i] = 1;}
+                        else{PN[l][l] = 1;}
+                    }     
+                    break;// if pivot found, stop searching
+                }
+            }    
+        
+        }    
+    
+    
+    
+    
+    
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
     else
     {
