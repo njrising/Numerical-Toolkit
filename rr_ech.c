@@ -1,4 +1,4 @@
-// Tool for putting matrices in reduced row echelon form
+// Putting matrices in reduced row echelon form
 // using Gaussian elimination
 // To use, make sure text file containing matrix data is in
 // same folder and run as ./[program name] [file.txt] after compilation
@@ -36,17 +36,19 @@ int main(int argc, char* argv[])
         std::fstream in_file;
         in_file.open(file_name,std::ios::in);
 
-        if(in_file.is_open()){
-
+        if(in_file.is_open())
+        {
             std::string in_str;
             std::string token;
             float in_num;
 
-            // read in columns and rows of matrix
+            // input stream to operate on string
             getline(in_file,in_str);
             std::istringstream ss(in_str);
+            // get rows
             std::getline(ss,token,' ');
             std::stringstream(token)>>n_rows;
+            // get columns
             std::getline(ss,token,' ');
             std::stringstream(token)>>n_cols;
 
@@ -64,7 +66,7 @@ int main(int argc, char* argv[])
         else
         {
             // print error message if unable to open file
-            std::cout<<"could not open file"<<'\n';
+            std::cout<<"could not open file\n";
             return -1;
         }
 
