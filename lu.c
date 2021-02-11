@@ -1,6 +1,10 @@
 // LU decomposition for square matrices
 // PLU decomposition for non-square matrices
-// 
+// Write results to output or generate text files 
+// to store result for large matrices
+//
+// Author: Nathan Rising
+// Last Revision: 02/10/2021
 
 #include <iostream>
 #include <fstream>
@@ -9,8 +13,8 @@
 int main(int argc, char* argv[])
 {
 
-
-if(argc > 1)
+// Take in only one text file
+if(argc == 2)
 {
 
     std::string file_name;
